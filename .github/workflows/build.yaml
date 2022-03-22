@@ -24,3 +24,10 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.USER_NAME }}/github-action:latest
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_SSH }}
+          username: ${{ secrets.USER_NAME_SSH }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: docker images
