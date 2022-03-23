@@ -24,7 +24,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.USER_NAME_DOCKER }}/github-action
-      - name: executing remote ssh commands using password
+      - name: SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_SSH }}
