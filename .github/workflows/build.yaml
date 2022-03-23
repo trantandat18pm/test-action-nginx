@@ -30,4 +30,4 @@ jobs:
           host: ${{ secrets.HOST_SSH }}
           username: ${{ secrets.USER_NAME_SSH }}
           key: ${{ secrets.PRIVATE_KEY }}
-          command: docker images
+          command: sudo docker images
