@@ -30,4 +30,6 @@ jobs:
           host: ${{ secrets.HOST_SSH }}
           user: ${{ secrets.USER_NAME_SSH }}
           key: ${{ secrets.PRIVATE_KEY }}
-          command: sudo docker images
+          command: |
+            sudo docker run -d --rm -p 8080  ${{ secrets.USER_NAME_DOCKER }}/github-action
+            sudo docker ps
