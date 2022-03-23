@@ -25,9 +25,9 @@ jobs:
           push: true
           tags: ${{ secrets.USER_NAME_DOCKER }}/github-action
       - name: SSH
-        uses: appleboy/ssh-action@master
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.HOST_SSH }}
           username: ${{ secrets.USER_NAME_SSH }}
           key: ${{ secrets.PRIVATE_KEY }}
-          script: docker images
+          command: docker images
